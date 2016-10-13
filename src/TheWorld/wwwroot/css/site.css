@@ -12,7 +12,7 @@ label{
 }
 
 input[type=text], input[type=password], textarea {
-    width: 156px;
+    width: 150px;
 }
 
 #main{
@@ -61,4 +61,8 @@ input[type=text], input[type=password], textarea {
 
 #wrapper {
     margin: 0 0 0 250px;
+}
+
+.controlBottomMargin{
+    margin-bottom: 10px;
 }
