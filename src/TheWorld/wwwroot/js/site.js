@@ -28,7 +28,12 @@
     $("#sidebarToggle").on("click", function () {
         // toggleClass is adding the class if it doesn't exist and remove the class if it exists
         $sidebarAndWrapper.toggleClass("hide-sidebar");
-        if ($sidebarAndWrapper.hasclass)
+
+        if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
+            $(this).text("Show Sidebar");
+        } else {
+            $(this).text("Hide Sidebar");
+        }
     })
 
 })();
