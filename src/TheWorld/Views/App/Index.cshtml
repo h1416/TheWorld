@@ -2,55 +2,16 @@
     ViewBag.Title = "Home Page";
 }
 
-<!DOCTYPE html>
-<html>
+<h1>The World</h1>
+<p>This will be a fun web app soon</p>
 
-<head>
-    <title>The World - @ViewBag.Title</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-
-<body>
-    <div id="sidebar">
-        <img src="img/myFace.jpg" alt="heatshot" class="headShot" />
-        <span id="username">My Name</span>
-
-        <ul class="menu">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+<form>
+    <div class="controlBottomMargin">
+        <label>Date</label>
+        <input type="text" value="enter a date" />
     </div>
-
-    <div id="wrapper">
-        <div id="main">
-            <div>
-                <button id="sidebarToggle">Toggle Menu</button>
-            </div>
-            <h1>The World</h1>
-            <p>This will be a fun web app soon</p>
-
-            <form>
-                <div class="controlBottomMargin">
-                    <label>Date</label>
-                    <input type="text" value="enter a date" />
-                </div>
-                <div class="controlBottomMargin">
-                    <label>Location</label>
-                    <input type="text" value="enter a location" />
-                </div>
-            </form>
-        </div>
-
-        <div id="footer">
-            &copy; 2016 AH Inc All Rights Reserved.
-        </div>
+    <div class="controlBottomMargin">
+        <label>Location</label>
+        <input type="text" value="enter a location" />
     </div>
-
-    <script type="text/javascript" src="lib/jQuery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/site.js"></script>
-
-</body>
-
-</html>
+</form>
