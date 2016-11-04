@@ -4,17 +4,17 @@
 (function () {
 
     //var $ele = $("#username");
-    //ele.text("Hieu Vo");
+    //$ele.text("Hieu Vo");
 
-    //// change the background color of the form when hover over
-    //var main = $("#main");
-    //main.on("mouseenter",  function () {
-    //    main.style.background = "#888";
+    ////// change the background color of the form when hover over
+    //var $main = $("#main");
+    //$main.on("mouseenter",  function () {
+    //    $main.style.background = "#888";
     //});
 
     //// restore the background color of the form 
-    //main.on("mouseleave", function () {
-    //    main.style.background = "";
+    //$main.on("mouseleave", function () {
+    //    $main.style.background = "";
     //})
 
     //var $menuItems = $("ul.menu li a");
@@ -23,8 +23,12 @@
     //    alert(me.text());
     //});
 
-    $sidebarAndWrapper = $("#sidebar, #wrapper");
+    // Assign my name next to the image
+    var $myName = $("#username");
+    $myName.text("Hieu Vo");
 
+
+    $sidebarAndWrapper = $("#sidebar, #wrapper");
     $("#sidebarToggle").on("click", function () {
         // toggleClass is adding the class if it doesn't exist and remove the class if it exists
         $sidebarAndWrapper.toggleClass("hide-sidebar");
