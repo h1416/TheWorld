@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace TheWorld.Controllers.Wen
 {
@@ -12,6 +13,7 @@ namespace TheWorld.Controllers.Wen
 
         public IActionResult Contact()
         {
+            throw new InvalidOperationException("bad thing happened");
             return View();
         }
 
