@@ -12,7 +12,15 @@
 <h1>Contact Me</h1>
 
 <form method="post">
-    <span asp-validation-summary="ModelOnly"></span>
+    @*Displau the model level errors*@
+    <div asp-validation-summary="ModelOnly"></div>
+
+    @*Display success message what was set in the action*@
+    @if (ViewBag.UserMessage != null)
+    {
+        <div>@ViewBag.UserMessage</div>
+    }
+
     <label asp-for="Name"></label>
     <input asp-for="Name" type="text" />
     <span asp-validation-for="Name"></span>
