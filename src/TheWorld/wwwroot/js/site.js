@@ -40,4 +40,11 @@
         }
     })
 
+    var $what = $("#sidebar");
+
+    $what.on("click", function ()
+    {
+            
+    })
+
 })();
