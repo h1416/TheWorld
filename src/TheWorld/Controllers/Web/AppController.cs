@@ -13,7 +13,7 @@ namespace TheWorld.Controllers.Wen
 
         public IActionResult Contact()
         {
-            throw new InvalidOperationException("bad thing happened");
+            //throw new InvalidOperationException("bad thing happened");
             return View();
         }
 
