@@ -24,27 +24,24 @@
     //});
 
     // Assign my name next to the image
-    var $myName = $("#username");
-    $myName.text("Hieu Vo");
+    //var $myName = $("#username");
+    //$myName.text("Hieu Vu");
 
 
     $sidebarAndWrapper = $("#sidebar, #wrapper");
+    var $icon = $("#sidebarToggle i.fa");
+
     $("#sidebarToggle").on("click", function () {
         // toggleClass is adding the class if it doesn't exist and remove the class if it exists
         $sidebarAndWrapper.toggleClass("hide-sidebar");
 
         if ($sidebarAndWrapper.hasClass("hide-sidebar")) {
-            $(this).text("Show Sidebar");
+            $icon.removeClass("fa-angle-left");
+            $icon.addClass("fa-angle-right")
         } else {
-            $(this).text("Hide Sidebar");
+            $icon.removeClass("fa-angle-right");
+            $icon.addClass("fa-angle-left")
         }
-    })
-
-    var $what = $("#sidebar");
-
-    $what.on("click", function ()
-    {
-            
     })
 
 })();
