@@ -5,7 +5,7 @@
     <title>The World - @ViewBag.Title</title>
     <meta charset="utf-8" />
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />>
-    @*<link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />*@
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
@@ -24,7 +24,9 @@
     <div id="wrapper">
         <div id="main">
             <div>
-                <button id="sidebarToggle" class="btn btn-primary">Toggle Menu</button>
+                <button id="sidebarToggle" class="btn btn-success">
+                    <i class="fa fa-angle-left"></i>
+                </button>
             </div>
 
             @RenderBody()
