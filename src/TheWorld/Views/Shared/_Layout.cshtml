@@ -25,9 +25,10 @@
     <div id="wrapper">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-                <ul class="nav navbar-nav navbar-left"> @*'nav navbar-nav' for unorderedlist, 'navbar-left' to set that ul on the left*@
+                <ul class="nav navbar-nav navbar-left">
+                    @*'nav navbar-nav' for unorderedlist, 'navbar-left' to set that ul on the left*@
                     <li>
-                        <button id="sidebarToggle" class="btn btn-success">
+                        <button id="sidebarToggle" class="btn btn-primary">
                             <i class="fa fa-angle-left"></i>
                         </button>
                     </li>
@@ -52,16 +53,17 @@
             </div>
         </nav> @*put in the navbar and use boostrap navbar-inverse style class for it*@
 
-        <div id="main" class="container-fluid">  @*use "container-fluid" to take as much as the webpage as possible*@
+        <div id="main" class="container-fluid">
+            @*use "container-fluid" to take as much as the webpage as possible*@
             <div>
                 @RenderBody()
             </div>
         </div>
 
-        <div id="footer" class="container-fluid">
-            @*use "container-fluid" to take as much as the webpage as possible*@
-            <p class="text text-primary">&copy; 2016 AH Inc All Rights Reserved.</p>
-
+        <div id="footer" class="container-fluid">            @*use "container-fluid" to take as much as the webpage as possible*@
+            <div class="navbar navbar-inverse">
+                <h4 class="text text-center">&copy; 2016 AH Inc All Rights Reserved.</h4>
+            </div>
         </div>
     </div>
 
