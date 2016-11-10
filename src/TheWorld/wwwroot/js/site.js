@@ -24,8 +24,8 @@
     //});
 
     // Assign my name next to the image
-    //var $myName = $("#username");
-    //$myName.text("Hieu Vu");
+    var $myName = $("#username");
+    $myName.text("Hieu Vo");
 
 
     $sidebarAndWrapper = $("#sidebar, #wrapper");
