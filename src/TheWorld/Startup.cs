@@ -43,11 +43,12 @@ namespace TheWorld
                 // Implement a real mail service and register here
             }
 
-            // register the world db context
+            // register data access layer engines
             services.AddDbContext<WorldContext>(); // services.AddDbContext<WorldContext>(ServiceLifetime.Transient);
             services.AddScoped<IWorldRepository, WorldRepository>(); // register world repository
             services.AddTransient<WorldContextSeedData>(); // add seed data class
 
+            // 
             services.AddLogging();
 
             services.AddMvc();
@@ -56,26 +57,27 @@ namespace TheWorld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app,
             IHostingEnvironment env,
-            ILoggerFactory loggerFactory,
-            WorldContextSeedData seeder, ILoggerFactory fatory)
+            WorldContextSeedData seeder,
+            ILoggerFactory factory)
         {
-            //app.UseDefaultFiles();
-            app.UseStaticFiles();
-            
-
-            loggerFactory.AddConsole();
-
             if (env.IsEnvironment("Development"))
             {
                 // display exception 
                 app.UseDeveloperExceptionPage();
 
-                fatory.AddDebug(LogLevel.Information);
+                // Add logging to debug window, we can also use the other loggings instead, ex: file, console, etc.
+                // min level is information
+                factory.AddDebug(LogLevel.Information);
             }
             else
             {
-                fatory.AddDebug(LogLevel.Error);
+                // Add logging to debug window, we can also use the other loggings instead, ex: file, console, etc.
+                // min level is error
+                factory.AddDebug(LogLevel.Error);
             }
+
+            //app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseMvc(configRoute => configRoute.MapRoute(
                 name: "Default",
