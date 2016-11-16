@@ -45,6 +45,7 @@ namespace TheWorld
 
             // register the world db context
             services.AddDbContext<WorldContext>(); // services.AddDbContext<WorldContext>(ServiceLifetime.Transient);
+            services.AddScoped<IWorldRepository, WorldRepository>(); // register repository
             services.AddTransient<WorldContextSeedData>(); // add seed data class
             services.AddMvc();
         }

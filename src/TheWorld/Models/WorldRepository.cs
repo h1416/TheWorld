@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TheWorld.Models
 {
-    public class WorldRepository :IWorldRepository
+    public class WorldRepository : IWorldRepository
     {
         private WorldContext _context;
 
