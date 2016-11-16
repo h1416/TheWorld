@@ -48,6 +48,8 @@ namespace TheWorld
             services.AddScoped<IWorldRepository, WorldRepository>(); // register world repository
             services.AddTransient<WorldContextSeedData>(); // add seed data class
 
+            services.AddLogging();
+
             services.AddMvc();
         }
 
@@ -55,7 +57,7 @@ namespace TheWorld
         public void Configure(IApplicationBuilder app,
             IHostingEnvironment env,
             ILoggerFactory loggerFactory,
-            WorldContextSeedData seeder)
+            WorldContextSeedData seeder, ILoggerFactory fatory)
         {
             //app.UseDefaultFiles();
             app.UseStaticFiles();
@@ -67,6 +69,12 @@ namespace TheWorld
             {
                 // display exception 
                 app.UseDeveloperExceptionPage();
+
+                fatory.AddDebug(LogLevel.Information);
+            }
+            else
+            {
+                fatory.AddDebug(LogLevel.Error);
             }
 
             app.UseMvc(configRoute => configRoute.MapRoute(
