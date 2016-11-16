@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using TheWorld.Models;
 using TheWorld.Services;
 using TheWorld.ViewModels;
@@ -12,7 +13,10 @@ namespace TheWorld.Controllers.Wen
         private readonly IConfigurationRoot _config;
         private IWorldRepository _repository;
 
-        public AppController(IMailService mailService, IConfigurationRoot config, IWorldRepository repository)
+        public AppController(IMailService mailService,
+            IConfigurationRoot config,
+            IWorldRepository repository,
+            ILogger<AppController> logger)
         {
             _mailService = mailService;
             _config = config;
