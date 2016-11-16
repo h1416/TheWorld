@@ -15,7 +15,6 @@ namespace TheWorld.Models
             _context = context;
         }
 
-
         public async Task EnsureSeedData()
         {
             if (_context.Trips.Any())

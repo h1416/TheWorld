@@ -45,11 +45,15 @@ namespace TheWorld
 
             // register the world db context
             services.AddDbContext<WorldContext>(); // services.AddDbContext<WorldContext>(ServiceLifetime.Transient);
+            services.AddTransient<WorldContextSeedData>(); // add seed data class
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app,
+            IHostingEnvironment env,
+            ILoggerFactory loggerFactory,
+            WorldContextSeedData seeder)
         {
             //app.UseDefaultFiles();
             app.UseStaticFiles();
@@ -67,6 +71,8 @@ namespace TheWorld
                 name: "Default",
                 template: "{controller}/{action}/{id?}",
                 defaults: new { controller = "App", action = "index" }));
+
+            seeder.EnsureSeedData().Wait();
         }
     }
 }
