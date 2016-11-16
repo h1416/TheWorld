@@ -1,4 +1,7 @@
-﻿@{
+﻿@*Specify that the type of the model to gain intellisence when code*@
+@model IEnumerable<TheWorld.Models.Trip>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -25,7 +28,7 @@
         <ul>
             @foreach (var item in Model)
             {
-                <li>@item.Name</li>
+                <li>@item.Name : @item.DateCreated.ToString("d")</li>
             }
         </ul>
     </div>
