@@ -10,7 +10,6 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
       "environmentVariables": {
         "MailSettings__ToAddress": "Admin2@TheWorldApp.net",
         "ASPNETCORE_ENVIRONMENT": "Development"
