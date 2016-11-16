@@ -2,5 +2,8 @@
   "MailSettings": {
     "ToAddress": "Addmin@theworldapp.com",
     "Subject": "To the world App"
+  },
+  "ConnectionStrings": {
+    "WorldContextConnection": "Server=(localdb)\\MSSQLLocalDb;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true"
   }
 }
