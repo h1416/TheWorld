@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using TheWorld.Models;
 using TheWorld.Services;
 using TheWorld.ViewModels;
@@ -12,6 +13,7 @@ namespace TheWorld.Controllers.Wen
         private readonly IMailService _mailService;
         private readonly IConfigurationRoot _config;
         private IWorldRepository _repository;
+        private ILogger<AppController> _logger;
 
         public AppController(IMailService mailService,
             IConfigurationRoot config,
@@ -21,13 +23,26 @@ namespace TheWorld.Controllers.Wen
             _mailService = mailService;
             _config = config;
             _repository = repository;
+            _logger = logger;
         }
         //Home
         public IActionResult Index()
         {
-            var data = _repository.GetAllTrips();
+            try
+            {
+                var data = _repository.GetAllTrips();
 
-            return View(data);
+                return View(data);
+            }
+            catch(Exception ex)
+            {
+                // log error 
+                _logger.LogError($"Failed to get trips in homepage: {ex.Message}");
+
+                // redirect to user
+                return Redirect("/error");
+            }
+
         }
 
         public IActionResult Contact()
