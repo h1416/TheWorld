@@ -8,9 +8,10 @@ using TheWorld.Models;
 namespace TheWorld.Migrations
 {
     [DbContext(typeof(WorldContext))]
-    partial class WorldContextModelSnapshot : ModelSnapshot
+    [Migration("20161116161116_AddArrivalDateTimeField_CorrectAFieldNameToLongitude")]
+    partial class AddArrivalDateTimeField_CorrectAFieldNameToLongitude
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
