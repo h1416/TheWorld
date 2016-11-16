@@ -18,5 +18,11 @@ namespace TheWorld.Controllers.Api
         {
             return Ok(_repository.GetAllTrips());
         }
+
+        [HttpPost("api/trips")]
+        public IActionResult Post([FromBody]Trip theTrip)
+        {
+            return Ok(true);
+        }
     }
 }
