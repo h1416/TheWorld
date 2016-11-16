@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 using TheWorld.Models;
 using TheWorld.Services;
 
@@ -52,6 +53,10 @@ namespace TheWorld
             services.AddLogging();
 
             services.AddMvc();
+                //.AddJsonOptions(config =>
+                //{
+                //    config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                //}); // tell it to camel-case json results properties' names. No need any more, it is by default now
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
