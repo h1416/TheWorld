@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Linq;
 using TheWorld.Models;
 using TheWorld.Services;
 using TheWorld.ViewModels;
@@ -12,18 +10,18 @@ namespace TheWorld.Controllers.Wen
     {
         private readonly IMailService _mailService;
         private readonly IConfigurationRoot _config;
-        private WorldContext _context;
+        private IWorldRepository _repository;
 
-        public AppController(IMailService mailService, IConfigurationRoot config, WorldContext context)
+        public AppController(IMailService mailService, IConfigurationRoot config, IWorldRepository repository)
         {
             _mailService = mailService;
             _config = config;
-            _context = context;
+            _repository = repository;
         }
         //Home
         public IActionResult Index()
         {
-            var data = _context.Trips.ToList();
+            var data = _repository.GetAllTrips();
 
             return View(data);
         }
